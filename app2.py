@@ -7,9 +7,9 @@ from model2 import clf
 pickle.dump(clf, open('model2.pkl', 'wb'))
 
 # Load the model from the file
-model = pickle.load(open('model2.pkl', 'rb'))
+model2 = pickle.load(open('model2.pkl', 'rb'))
 
-print(model.predict([[20, 40]]))  # Example prediction
+print(model2.predict([[20, 40]]))  # Example prediction
 
 app = Flask(__name__)
 
@@ -25,7 +25,7 @@ def predict():
     final_features = [np.array(int_features)]  # Convert to array
 
     # Make prediction
-    prediction = model.predict(final_features)
+    prediction = model2.predict(final_features)
     output = round(prediction[0], 2)
 
     return render_template('index.html', prediction_text='Time = {}'.format(output))
