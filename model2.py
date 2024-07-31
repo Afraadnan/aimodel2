@@ -33,7 +33,7 @@ clf.fit(X_train_scaled, y_train)
 
 # Make predictions on the test set
 predictions = clf.predict(X_test_scaled)
-again= clf.predict(17,23)
+again= clf.predict[[17,23]]
 print (again)
 
 # Print lengths
